@@ -24,28 +24,40 @@ void print_prompt()
     cout << "\nmy_shell% " << flush;
 }
 
-
-void getpath(char * arg)
+void parse_input(int & argc, char *buf, char *argv[])
 {
-    char * tmp = arg;
-    while(*tmp != ' ')
+    while(*buf != 0)
     {
-        strncat(arg, tmp, 1);
-        ++tmp;
+        while(*buf == ' ' || *buf == '\t')
+            *buf++ = '\0';
+        *argv++ = buf;
+        argc++;
+        while(*buf != '\0' && *buf != ' ' && *buf != '\t')
+            buf++;
     }
+    *argv = 0;
 }
+
+
+
+
 
 
 int main()
 {
-    char tmpargv[512];
-    char * arg = NULL; //program name
+    char buf[1024];
+    char * argv[512];
+    int argc = 0;
     while(1)
     {
         print_prompt();
-        cin.getline(arg, 511, ' ');
-        cin.getline(tmpargv, 511, '\n');
-        execv(arg, NULL);
+        cin.getline(buf, 1023, '\n');
+        parse_input(argc, buf, argv);
+        for(int i = 0; i < argc; ++i)
+            cout << argv[i] << endl;
+        //get input
+        //parse input
+        //execute on input
     }
 
 
