@@ -1,0 +1,24 @@
+// Course: Course Name <Winter 2014>
+//
+// First Name: Alex
+// Last Name: Feinland
+// CS Login: afein001
+// UCR email: afein001@ucr.edu
+// SID: 861056485
+//
+// Lecture Section: <100>
+// Lab Section: <21>
+// TA: Bryan Marsh
+//
+// Assignment <HW4>
+//
+// I hereby certify that the code in this file 
+// is ENTIRELY my own original work.
+
+1. grep "[0-9]" *.cpp
+2. grep "cout <<" *.hpp *.cpp
+3. sed -iE '/^$/d' foo.cpp
+4. find ~ -type f -iname '*.o' -exec cp -t ~/.trash/ {} \+
+5. find / -type d -iname 'bin' -exec ls {} \+
+6. find ~ -type f -size +20b -exec ls {} \+
+
